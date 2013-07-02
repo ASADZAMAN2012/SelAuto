@@ -15,4 +15,30 @@
   		<version>4.11</version>
   	</dependency>
   </dependencies>
+  <build>
+      <plugins>
+        <plugin>
+ <groupId>org.codehaus.mojo</groupId>
+ <artifactId>selenium-maven-plugin</artifactId>
+ <configuration>
+  <browser>*firefox</browser>
+  <suite>src/test/java/selenium/suite.html</suite>
+  <startURL>http://bellmore.nixon.i.patch.com/</startURL>
+ </configuration>
+
+ <executions>
+  <execution>
+   <id>test</id>
+   <phase>test</phase>
+   <goals>
+    <goal>selenese</goal>
+   </goals>
+  </execution>
+ </executions>
+</plugin>    
+      </plugins>
+    
+  </build>
+  
+
 </project>
